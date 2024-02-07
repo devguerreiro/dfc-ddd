@@ -1,6 +1,6 @@
 import Address from "./address";
 
-class Costumer {
+export default class Costumer {
     private _id: string;
     private _name: string;
     private _address!: Address;

@@ -1,6 +1,6 @@
 import Address from "./address";
 
-export default class Costumer {
+export default class Customer {
     private _id: string;
     private _name: string;
     private _address!: Address;
@@ -9,6 +9,7 @@ export default class Costumer {
     constructor(id: string, name: string) {
         this._id = id;
         this._name = name;
+        this.validate();
     }
 
     get id(): string {

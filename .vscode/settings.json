@@ -3,6 +3,7 @@
         "entity",
         "value-object",
         "aggregate",
-        "tests"
+        "tests",
+        "domain service"
     ]
 }

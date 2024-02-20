@@ -4,6 +4,7 @@
         "value-object",
         "aggregate",
         "tests",
-        "domain service"
+        "domain service",
+        "repository"
     ]
 }

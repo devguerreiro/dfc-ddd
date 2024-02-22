@@ -112,6 +112,14 @@ describe("Customer repository test", () => {
         });
     });
 
+    it("should throw an error when customer is not found", async () => {
+        const customerRepository = new CustomerRepository();
+
+        expect(async () => {
+            await customerRepository.find("1");
+        }).rejects.toThrow("Customer not found");
+    });
+
     it("should find all customers", async () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("1", "Customer");

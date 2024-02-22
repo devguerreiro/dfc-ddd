@@ -52,6 +52,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
 
         customer.changeAddress(address);
         if (customerModel.active) customer.activate();
+        customer.addRewardPoints(customerModel.rewardPoints);
 
         return customer;
     }
@@ -70,6 +71,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
 
             customer.changeAddress(address);
             if (customerModel.active) customer.activate();
+            customer.addRewardPoints(customerModel.rewardPoints);
 
             return customer;
         });

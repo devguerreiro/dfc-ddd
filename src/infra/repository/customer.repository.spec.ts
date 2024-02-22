@@ -91,6 +91,8 @@ describe("Customer repository test", () => {
         const address = new Address("rua", "cidade", "estado", "12345-678");
 
         customer.changeAddress(address);
+        customer.activate();
+        customer.addRewardPoints(10);
 
         await customerRepository.create(customer);
 
@@ -126,6 +128,8 @@ describe("Customer repository test", () => {
         const address = new Address("rua", "cidade", "estado", "12345-678");
 
         customer.changeAddress(address);
+        customer.activate();
+        customer.addRewardPoints(10);
 
         await customerRepository.create(customer);
 
@@ -138,6 +142,8 @@ describe("Customer repository test", () => {
         );
 
         customer2.changeAddress(address2);
+        customer2.activate();
+        customer2.addRewardPoints(10);
 
         await customerRepository.create(customer2);
 

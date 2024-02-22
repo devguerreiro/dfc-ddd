@@ -103,10 +103,10 @@ describe("Customer repository test", () => {
         expect(customerModel.toJSON()).toStrictEqual({
             id: foundCustomer.id,
             name: foundCustomer.name,
-            street: foundCustomer.address.street,
-            city: foundCustomer.address.city,
-            state: foundCustomer.address.state,
-            zipCode: foundCustomer.address.zipCode,
+            street: foundCustomer.Address.street,
+            city: foundCustomer.Address.city,
+            state: foundCustomer.Address.state,
+            zipCode: foundCustomer.Address.zipCode,
             active: foundCustomer.isActive(),
             rewardPoints: foundCustomer.rewardPoints,
         });

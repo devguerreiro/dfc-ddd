@@ -5,6 +5,7 @@
         "aggregate",
         "tests",
         "domain service",
-        "repository"
+        "repository",
+        "domain events"
     ]
 }

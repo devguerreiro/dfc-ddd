@@ -163,4 +163,12 @@ describe("Order repository test", () => {
 
         expect(foundOrder).toEqual(order);
     });
+
+    it("should throw an error when order is not found", async () => {
+        const orderRepository = new OrderRepository();
+
+        expect(async () => {
+            await orderRepository.find("1");
+        }).rejects.toThrow("Order not found");
+    });
 });

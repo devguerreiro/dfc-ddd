@@ -84,4 +84,54 @@ describe("Order repository test", () => {
             ],
         });
     });
+
+    it("should update an order", async () => {
+        const customerRepository = new CustomerRepository();
+        const customer = new Customer("1", "Customer");
+        const address = new Address("Rua", "Cidade", "Estado", "12345-678");
+        customer.changeAddress(address);
+        await customerRepository.create(customer);
+
+        const productRepository = new ProductRepository();
+        const product = new Product("1", "Product", 10);
+        await productRepository.create(product);
+
+        const orderItem = new OrderItem(
+            "1",
+            product.name,
+            product.price,
+            product.id,
+            2
+        );
+
+        const order = new Order("1", customer.id, [orderItem]);
+
+        const orderRepository = new OrderRepository();
+        await orderRepository.create(order);
+
+        orderItem.changeQuantity(4);
+
+        await orderRepository.update(order);
+
+        const orderModel = await OrderModel.findOne({
+            where: { id: order.id },
+            include: ["items"],
+        });
+
+        expect(orderModel.toJSON()).toStrictEqual({
+            id: order.id,
+            customer_id: customer.id,
+            total: order.total(),
+            items: [
+                {
+                    id: orderItem.id,
+                    name: orderItem.name,
+                    price: orderItem.price,
+                    product_id: orderItem.productId,
+                    quantity: orderItem.quantity,
+                    order_id: order.id,
+                },
+            ],
+        });
+    });
 });

@@ -1,3 +1,6 @@
+import CustomerCreatedEvent from "../event/@shared/customer/customer-created.event";
+import EventDispatcher from "../event/@shared/event-dispatcher";
+
 import Address from "./address";
 
 export default class Customer {
@@ -7,10 +10,12 @@ export default class Customer {
     private _active: boolean = true;
     private _rewardPoints: number = 0;
 
-    constructor(id: string, name: string) {
+    constructor(id: string, name: string, eventDispatcher: EventDispatcher) {
         this._id = id;
         this._name = name;
         this.validate();
+
+        eventDispatcher.notify(new CustomerCreatedEvent({}));
     }
 
     get id(): string {

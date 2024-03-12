@@ -1,5 +1,6 @@
-import Address from "../../../entity/address";
-import EventInterface from "../event.interface";
+import EventInterface from "../../@shared/event/event.interface";
+
+import Address from "../value-object/address";
 
 type EventDataType = { id: string; name: string; address: Address };
 

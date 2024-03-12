@@ -6,6 +6,7 @@
         "tests",
         "domain service",
         "repository",
-        "domain events"
+        "domain events",
+        "modules"
     ]
 }

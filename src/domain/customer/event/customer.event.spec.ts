@@ -1,7 +1,9 @@
-import Address from "../../../entity/address";
-import Customer from "../../../entity/customer";
 
-import EventDispatcher from "../event-dispatcher";
+import EventDispatcher from "../../@shared/event/event-dispatcher";
+
+import Customer from "../entity/customer";
+import Address from "../value-object/address";
+
 import CustomerAddressChangedEvent from "./customer-address-changed.event";
 import ShowConsoleLog1Handler from "./handler/show-console-log-1.handler";
 import ShowConsoleLog2Handler from "./handler/show-console-log-2.handler";

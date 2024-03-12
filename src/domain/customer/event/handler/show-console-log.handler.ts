@@ -1,4 +1,4 @@
-import EventHandlerInterface from "../../event-handler.interface";
+import EventHandlerInterface from "../../event/event-handler.interface";
 import CustomerAddressChangedEvent from "../customer-address-changed.event";
 
 export default class ShowConsoleLogHandler
